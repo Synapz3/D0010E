@@ -127,7 +127,7 @@ public class GameGrid extends Observable {
         int counter = 0;
         for (int x = 0; x < gameGrid.length; x++){
             for (int y = 0; y < gameGrid.length; y++){
-                if (getLocation(x,y) == ME) {
+                if (getLocation(x,y) == player) {
                    counter++;
                     if (counter == INROW){
                         return true;
