@@ -61,15 +61,22 @@ class MyObservable {
         return hasChanged;
     }
     public void notifyObservers() {
-        for (MyObserver x : array){
-            x.update(this, null);
+        if (hasChanged) {
+            for (MyObserver x : array) {
+                x.update(this, null);
+            }
+            clearChanged();
         }
     }
     public void notifyObservers(Object arg) {
-        for (MyObserver x : array){
-            x.update(this, arg);
+        if (hasChanged) {
+            for (MyObserver x : array) {
+                x.update(this, arg);
+            }
         }
+        clearChanged();
     }
+
     protected void setChanged() {
         hasChanged = true;
     }
